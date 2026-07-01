@@ -58,9 +58,9 @@ Reason: The issue affects the governing source of truth for future projects.
 | 7A | Critical | Breaks Other Section | Missing high-level architectural principles needed by QG-3 and ADR review. |
 | 7B | Critical | Weakens Governance | Missing Roles and Responsibilities Matrix. |
 | 7C | Important | Independent Coverage Gap | Missing engineering metrics. |
-| 7D | Important | Independent Coverage Gap | Missing Backup and DR policy. |
+| 7D | Critical | Independent Coverage Gap | Missing Backup and DR policy. |
 | 7E | Important | Independent Coverage Gap | Missing support model. |
-| 7F | Critical | Weakens Governance | Missing framework glossary and founding rationale. |
+| 7F | Important | Weakens Governance | Missing framework glossary and founding rationale. |
 | 8 | Critical | Weakens Governance | Constitution change approval authority is missing. |
 | 9 | Technical / Verification | Verification Only | PDF extraction and table accessibility issue. |
 
@@ -261,7 +261,7 @@ Required correction:
 
 #### 7D. Missing Backup And DR Policy
 
-Severity: Important
+Severity: Critical
 
 Dependency Impact: Independent Coverage Gap
 
@@ -275,6 +275,7 @@ Missing or materially underrepresented controls include:
 Impact:
 
 - Projects with operational or business-critical data lack a baseline continuity rule.
+- Loss, corruption, or unavailability of important project data may have no defined recovery expectation.
 
 Required correction:
 
@@ -298,7 +299,7 @@ Required correction:
 
 #### 7F. Missing Framework Glossary And Founding Rationale
 
-Severity: Critical
+Severity: Important
 
 Dependency Impact: Weakens Governance
 
@@ -311,6 +312,7 @@ Impact:
 
 - Readers lose shared definitions for terms such as QG, ADR, RTM, Profile, Technical Debt, Soft Delete, and SSOT.
 - The constitution becomes easier to reinterpret inconsistently across projects.
+- This weakens adoption and consistency, but does not by itself break a concrete operational control in the same way as missing Backup and DR expectations.
 
 Required correction:
 
