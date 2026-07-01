@@ -47,35 +47,9 @@ Reason: The Engineering Standards must remain readable, internally consistent, a
 
 | Item | Severity | Dependency Impact | Summary |
 | --- | --- | --- | --- |
-| ES-1 | Technical / Verification | Verification Only | Potential bilingual mirroring or mismatch in section 3, Engineering Philosophy. |
 | ES-2 | Important | Weakens Governance | Missing explicit SPGF section references for standards that derive from constitutional controls. |
 
-## Confirmed Problems And Verification Items
-
-### ES-1. Potential Bilingual Mirroring Or Mismatch In Section 3
-
-Severity: Technical / Verification
-
-Dependency Impact: Verification Only
-
-Section 3, Engineering Philosophy, should be visually and source-verified because the English principles and Arabic explanations may appear mirrored, reversed, or mismatched depending on the PDF rendering or text extraction layer.
-
-Observed concern:
-
-- The section contains bilingual principle pairs such as `Consistency over Cleverness`, `Readability over Brevity`, `Explicit over Implicit`, `Simplicity over Magic`, and `Automation over Manual Work`.
-- Extracted text from the PDF is unreliable for mixed Arabic/English RTL/LTR content, so the issue must be confirmed against the original source or rendered PDF before being treated as a confirmed wording defect.
-
-Impact if confirmed:
-
-- Readers may misunderstand the intended engineering principle.
-- The English label and Arabic explanation may fail to reinforce each other.
-- The standards may lose credibility in one of their most foundational sections.
-
-Required correction:
-
-- Verify section 3 visually in the rendered PDF and against the canonical source.
-- Ensure each English principle maps to its correct Arabic explanation.
-- Prefer a source format that preserves mixed RTL/LTR ordering reliably before regenerating the PDF.
+## Active Problems
 
 ### ES-2. Missing Explicit SPGF Section References
 
@@ -98,6 +72,33 @@ Required correction:
 - Avoid adding references to unstable v6.2 section numbers until the corrected constitution release is drafted and approved.
 - After SPGF v6.3 is approved, run a reference alignment pass between the constitution and Engineering Standards.
 
+## Resolved Verification Items
+
+### ES-1. Section 3 Bilingual Mirroring Check
+
+Severity: Technical / Verification
+
+Dependency Impact: Verification Only
+
+Status: Closed - no visual defect confirmed.
+
+Verification date: 2026-07-02
+
+Section 3, Engineering Philosophy, was visually checked in the rendered `Engineering_Standards_23_v1.1.pdf` page 1.
+
+Result:
+
+- `Consistency over Cleverness` maps correctly to Arabic text meaning consistency is more important than unfamiliar clever solutions.
+- `Readability over Brevity` maps correctly to Arabic text meaning code clarity is preferred over brevity.
+- `Explicit over Implicit` maps correctly to Arabic text meaning explicit behavior is better than implicit assumption.
+- `Simplicity over Magic` maps correctly to Arabic text meaning unclear magic and complexity should be avoided.
+- `Automation over Manual Work` maps correctly to Arabic text meaning repetitive work should be automated when practical.
+
+Conclusion:
+
+- The suspected issue appears to be a text extraction / RTL-LTR extraction artifact, not a visual defect in the PDF.
+- No Engineering Standards correction is required for section 3 based on the rendered PDF.
+
 ## Adoption Rule Until Fixed
 
 Do not treat this errata as a replacement for the Engineering Standards document.
@@ -105,5 +106,4 @@ Do not treat this errata as a replacement for the Engineering Standards document
 Until the next corrected standards release is produced:
 
 - Use `Engineering_Standards_23_v1.1.pdf` as the current general standards reference.
-- Treat `ES-1` as a verification item, not a confirmed content defect.
 - Treat `ES-2` as an alignment defect that should be resolved after SPGF v6.3 stabilizes section identifiers or named control IDs.

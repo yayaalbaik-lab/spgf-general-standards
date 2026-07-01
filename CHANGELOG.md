@@ -7,3 +7,4 @@
 - Created initial repository structure for reusable SPGF governance assets.
 - Added detailed errata for SPGF Constitution v6.2 and identified required corrective release work for v6.3.
 - Added Engineering Standards v1.1 errata to track the section 3 bilingual verification item and missing explicit SPGF reference alignment.
+- Verified Engineering Standards v1.1 section 3 visually and closed the bilingual mirroring concern as an extraction artifact.
