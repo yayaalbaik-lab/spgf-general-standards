@@ -6,25 +6,33 @@ Date: 2026-07-02
 
 ## Document Status
 
-This file is an official repository-tracked errata and alignment register for `Engineering_Standards_23_v1.1.pdf`.
+This file is an official repository-tracked errata and correction register for `Engineering_Standards_23_v1.1.pdf`.
 
-It is not part of the Engineering Standards document itself. It records corrections, severity classifications, and alignment notes that should be considered before producing the next corrected Engineering Standards release.
+It is not part of the Engineering Standards document itself and does not carry standards authority as an appendix. It records defects and alignment issues that should be reviewed before producing the next corrected Engineering Standards release.
 
-Traceability in this errata uses stable errata item IDs. New Engineering Standards section numbers should not be assigned here until the corrective source is drafted and approved.
+Traceability in this errata uses stable errata item IDs such as `ES-1` and `ES-2`. New Engineering Standards section numbers should not be assigned here until the corrective source is drafted and approved.
+
+## Correction Note
+
+Earlier draft notes incorrectly reused SPGF Constitution errata items about Backup/DR, support model, glossary, and founding rationale as if they were Engineering Standards-specific findings.
+
+That was a classification error. Those items remain relevant to the SPGF Constitution errata unless and until a distinct Engineering Standards defect is identified for them.
+
+This file now tracks Engineering Standards-specific findings only.
 
 ## Classification
 
-Governance and engineering standards alignment note.
+Engineering Standards defect / alignment register.
 
-Reason: The Engineering Standards must remain consistent with the SPGF Constitution errata, especially where operational obligations such as Backup/DR and support expectations affect daily engineering discipline.
+Reason: The Engineering Standards must remain readable, internally consistent, and explicitly traceable to the SPGF Constitution where it claims to implement or extend constitutional controls.
 
 ## Severity Scale
 
 | Severity | Meaning |
 | --- | --- |
-| Critical | Must be corrected before treating the next standards release as a reliable governing reference. |
+| Critical | Prevents treating the standards as a reliable governing reference until corrected. |
 | Important | Should be corrected before daily use, but does not alone invalidate the whole standards document. |
-| Technical / Verification | Requires rendering, extraction, accessibility, or validation verification. |
+| Technical / Verification | Requires rendering, extraction, accessibility, or source verification before being treated as a confirmed content defect. |
 
 ## Dependency Impact Scale
 
@@ -33,73 +41,69 @@ Reason: The Engineering Standards must remain consistent with the SPGF Constitut
 | Breaks Other Section | The defect directly prevents another section, control, or gate from functioning as intended. |
 | Weakens Governance | The defect reduces enforceability, ownership, traceability, or decision discipline. |
 | Independent Coverage Gap | The defect is missing important coverage, but does not directly break another section. |
-| Verification Only | The item requires visual, extraction, accessibility, or rendering verification. |
+| Verification Only | The item requires visual, extraction, accessibility, or source verification. |
 
 ## Priority Summary
 
 | Item | Severity | Dependency Impact | Summary |
 | --- | --- | --- | --- |
-| ES-7D | Critical | Independent Coverage Gap | Backup and DR must be treated as a critical operational standards area. |
-| ES-7E | Important | Independent Coverage Gap | Support model remains important before daily operational use. |
-| ES-7F | Important | Weakens Governance | Glossary and founding rationale improve adoption and consistency, but are not as severe as Backup/DR. |
+| ES-1 | Technical / Verification | Verification Only | Potential bilingual mirroring or mismatch in section 3, Engineering Philosophy. |
+| ES-2 | Important | Weakens Governance | Missing explicit SPGF section references for standards that derive from constitutional controls. |
 
-## Confirmed Alignment Notes
+## Confirmed Problems And Verification Items
 
-### ES-7D. Backup And DR
+### ES-1. Potential Bilingual Mirroring Or Mismatch In Section 3
 
-Severity: Critical
+Severity: Technical / Verification
 
-Dependency Impact: Independent Coverage Gap
+Dependency Impact: Verification Only
 
-Backup and disaster recovery controls should be treated as critical in Engineering Standards.
+Section 3, Engineering Philosophy, should be visually and source-verified because the English principles and Arabic explanations may appear mirrored, reversed, or mismatched depending on the PDF rendering or text extraction layer.
 
-Reason:
+Observed concern:
 
-- They directly affect data protection and business continuity.
-- Missing RPO/RTO expectations can leave projects without a clear recovery standard.
-- The risk exists even if the omission does not directly break another section of the document.
+- The section contains bilingual principle pairs such as `Consistency over Cleverness`, `Readability over Brevity`, `Explicit over Implicit`, `Simplicity over Magic`, and `Automation over Manual Work`.
+- Extracted text from the PDF is unreliable for mixed Arabic/English RTL/LTR content, so the issue must be confirmed against the original source or rendered PDF before being treated as a confirmed wording defect.
 
-Required correction:
+Impact if confirmed:
 
-- Define baseline backup, restore, RPO, and RTO expectations by project profile.
-- Ensure Standard and Enterprise profiles have explicit recovery expectations.
-- Require restore testing or verification where project data is operationally important.
-
-### ES-7E. Support Model
-
-Severity: Important
-
-Dependency Impact: Independent Coverage Gap
-
-The P1/P2/P3 support model should remain an important operational coverage area.
-
-Reason:
-
-- It matters before daily operational use.
-- It defines incident priority and response expectations.
-- It is generally less foundational than Backup/DR because the absence of support categories does not by itself define data-loss exposure.
+- Readers may misunderstand the intended engineering principle.
+- The English label and Arabic explanation may fail to reinforce each other.
+- The standards may lose credibility in one of their most foundational sections.
 
 Required correction:
 
-- Add or restore a simple P1/P2/P3 support model.
-- Scale response expectations by project profile.
+- Verify section 3 visually in the rendered PDF and against the canonical source.
+- Ensure each English principle maps to its correct Arabic explanation.
+- Prefer a source format that preserves mixed RTL/LTR ordering reliably before regenerating the PDF.
 
-### ES-7F. Glossary And Founding Rationale
+### ES-2. Missing Explicit SPGF Section References
 
 Severity: Important
 
 Dependency Impact: Weakens Governance
 
-The glossary and founding rationale should be treated as important governance aids, not as a higher-severity item than Backup/DR.
+The Engineering Standards state that they are an implementation extension of the SPGF Constitution, but the document does not consistently include explicit SPGF references for standards that derive from constitutional controls.
 
-Reason:
+Impact:
 
-- They improve shared understanding, adoption, and consistent interpretation.
-- They help keep terms such as QG, ADR, RTM, Profile, Technical Debt, Soft Delete, SSOT, RPO, RTO, P1, P2, and P3 aligned.
-- Their absence weakens governance consistency, but does not by itself create the same operational continuity risk as missing Backup/DR controls.
+- The relationship between constitution-level rules and engineering-level implementation becomes harder to audit.
+- Future edits to the constitution may not be reflected in the standards.
+- Reviewers cannot easily trace whether a coding, testing, documentation, or release rule implements a specific SPGF requirement.
 
 Required correction:
 
-- Add or restore a concise glossary.
-- Keep glossary terms aligned with the SPGF Constitution.
-- Include only enough founding rationale to explain the standards' role without duplicating the constitution.
+- Add explicit SPGF references where a standard implements a constitutional control.
+- Prefer stable named anchors or control IDs over fragile numeric section references.
+- Avoid adding references to unstable v6.2 section numbers until the corrected constitution release is drafted and approved.
+- After SPGF v6.3 is approved, run a reference alignment pass between the constitution and Engineering Standards.
+
+## Adoption Rule Until Fixed
+
+Do not treat this errata as a replacement for the Engineering Standards document.
+
+Until the next corrected standards release is produced:
+
+- Use `Engineering_Standards_23_v1.1.pdf` as the current general standards reference.
+- Treat `ES-1` as a verification item, not a confirmed content defect.
+- Treat `ES-2` as an alignment defect that should be resolved after SPGF v6.3 stabilizes section identifiers or named control IDs.

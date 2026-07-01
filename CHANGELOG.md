@@ -6,4 +6,4 @@
 - Added `Engineering Standards 23 v1.1` as the general engineering standards document.
 - Created initial repository structure for reusable SPGF governance assets.
 - Added detailed errata for SPGF Constitution v6.2 and identified required corrective release work for v6.3.
-- Added Engineering Standards v1.1 errata to track operational severity alignment for Backup/DR, support model, glossary, and founding rationale.
+- Added Engineering Standards v1.1 errata to track the section 3 bilingual verification item and missing explicit SPGF reference alignment.
