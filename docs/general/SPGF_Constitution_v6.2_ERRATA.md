@@ -18,9 +18,33 @@ Severity: High.
 
 Reason: The issue affects the governing source of truth for future projects.
 
+## Severity Scale
+
+| Severity | Meaning |
+| --- | --- |
+| Critical | Prevents adopting v6.2 as a final governing reference until corrected. |
+| Important | Must be fixed before daily governance use, but does not alone invalidate the whole document. |
+| Technical / Verification | A rendering, extraction, accessibility, or validation concern; requires verification but may not be a content defect. |
+
+## Priority Summary
+
+| Item | Severity | Summary |
+| --- | --- | --- |
+| 1 | Critical | Missing Document Control and Versioning. |
+| 2 | Important | Missing or changed section references. |
+| 3 | Critical | Lean / Standard classification inconsistency. |
+| 4 | Important | Mandatory baseline is not strong enough. |
+| 5 | Important | Quality Gate flexibility lacks decision ownership. |
+| 6 | Important | Open Question / Risk / Technical Debt transition rule is missing. |
+| 7 | Critical | Material v6.1 governance sections are missing. |
+| 8 | Critical | Constitution change approval authority is missing. |
+| 9 | Technical / Verification | PDF extraction and table accessibility issue. |
+
 ## Confirmed Problems
 
 ### 1. Missing Document Control And Versioning
+
+Severity: Critical
 
 `v6.2` does not contain a formal Document Control section or Versioning Table equivalent to the v6.1 document status/version table.
 
@@ -46,6 +70,8 @@ Required correction:
 
 ### 2. Missing Or Changed Section References
 
+Severity: Important
+
 Any document that refers to older SPGF sections such as:
 
 - `SPGF §4`
@@ -65,6 +91,8 @@ Note: The current `Engineering_Standards_23_v1.1.pdf` in this repository did not
 
 ### 3. Lean / Standard Classification Inconsistency
 
+Severity: Critical
+
 The v6.2 profile classification language is inconsistent:
 
 - Section 4 describes Lean exclusion in terms of financial, inventory, or regulatory-sensitive data.
@@ -80,6 +108,8 @@ Required correction:
 - The Standard trigger list should consistently include at least: financial data, inventory data, health data, sensitive personal data, operational permissions, regulatory/control reports, and high operational impact.
 
 ### 4. Mandatory Baseline Is Not Strong Enough
+
+Severity: Important
 
 The v6.2 text mentions the core non-negotiables in prose, but it does not preserve the strong v6.1 style of a standalone mandatory baseline that never drops regardless of profile.
 
@@ -101,6 +131,8 @@ Restore a standalone section equivalent to v6.1 §13.3:
 
 ### 5. Quality Gate Flexibility Needs Decision Ownership
 
+Severity: Important
+
 Section 6 allows early prototypes, spikes, or preliminary designs before all questions are closed. This is useful, but it does not define who is allowed to classify an open question as non-critical.
 
 Impact:
@@ -113,6 +145,8 @@ Required correction:
 - Require unresolved critical questions to remain blockers for production development of sensitive workflows.
 
 ### 6. Open Question / Risk / Technical Debt Transition Rule Is Missing
+
+Severity: Important
 
 Section 9 correctly distinguishes Open Question, Risk, and Technical Debt, but does not define transitions between them.
 
@@ -130,6 +164,8 @@ Add transition rules:
 - Register reviews must reclassify stale entries.
 
 ### 7. Material Sections Missing From v6.2
+
+Severity: Critical
 
 The following governance areas were present in v6.1 or discussed as part of the SPGF framework, but are absent or materially underrepresented in the current v6.2 PDF:
 
@@ -161,6 +197,8 @@ The following governance areas were present in v6.1 or discussed as part of the 
 
 ### 8. Constitution Change Approval Authority Is Missing
 
+Severity: Critical
+
 Section 14 discusses periodic review and candidate changes, but it does not clearly define who approves final amendments to the constitution.
 
 Impact:
@@ -173,6 +211,8 @@ Required correction:
 - Candidate changes must remain Draft/Review until approved.
 
 ### 9. PDF Extraction And Table Accessibility Issue
+
+Severity: Technical / Verification
 
 Visual inspection of the current `SPGF_Constitution_v6.2.pdf` shows that the profile and QG tables are broadly readable in the rendered PDF. However, text extraction from the PDF is unreliable for Arabic and mixed RTL/LTR content.
 
