@@ -1,12 +1,38 @@
-# SPGF Constitution v6.3 Draft
+# SPGF Constitution v6.3 Corrective Delta Draft
 
-Status: Draft
+Status: Draft - Corrective Delta Only
 
 Date: 2026-07-02
 
-Supersedes: `SPGF_Constitution_v6.2.pdf` when approved.
+Supersedes: Nothing by itself.
 
-Source Type: Canonical draft source.
+Source Type: Corrective delta draft.
+
+Language Policy: Arabic is the primary language for the approved SPGF Constitution, with professional English terms embedded where useful.
+
+## 0. Critical Scope Warning
+
+Control ID: `SPGF-V6.3-SCOPE`
+
+This file is not a complete replacement for `SPGF_Constitution_v6.2.pdf`.
+
+It contains corrective sections intended to resolve critical v6.2 errata before they are merged with the unaffected valid content from v6.2.
+
+Do not approve this file as the full `v6.3` constitution by itself.
+
+The final `v6.3` candidate must merge:
+
+- Corrective content from this delta draft.
+- Valid retained content from `SPGF_Constitution_v6.2.pdf`.
+- Full Quality Gates, including QG-1 through QG-4 and their pass criteria.
+- Full Open Question, Risk, and Technical Debt templates.
+- Detailed Soft Delete and Audit Trail policy.
+- Engineering Standards Trigger stage.
+- Quick usage page.
+- Cross-domain examples.
+- Periodic review process.
+
+The final approved constitution must be written primarily in Arabic, with English technical terms included where they improve precision or traceability.
 
 ## 1. Document Control
 
@@ -16,7 +42,7 @@ Control ID: `SPGF-DOC-CONTROL`
 | --- | --- | --- | --- | --- |
 | v6.1 | Previous | Historical Reference | Project Owner | Prior constitution version containing governance sections later found missing from v6.2. |
 | v6.2 | 2026-07-01 | Approved with Errata | Project Owner | Generalized the constitution but introduced material omissions tracked in `SPGF_Constitution_v6.2_ERRATA.md`. |
-| v6.3 Draft | 2026-07-02 | Draft | Project Owner | Corrective draft restoring critical governance controls and introducing stable control IDs. |
+| v6.3 Corrective Delta Draft | 2026-07-02 | Draft - Corrective Delta Only | Project Owner | Corrective delta restoring critical governance controls and introducing stable control IDs; not a complete constitution replacement. |
 
 Document status values:
 
@@ -26,7 +52,7 @@ Document status values:
 - Approved with Errata: usable with known defects tracked separately.
 - Deprecated: replaced by a newer approved version.
 
-This draft is not approved until the Project Owner explicitly approves it and the approval is recorded in this Document Control section.
+This draft is not approved as a constitution until it is merged into a complete v6.3 candidate, translated/adapted to the approved Arabic-primary language policy, explicitly approved by the Project Owner, and recorded in this Document Control section.
 
 ## 2. Purpose And Authority
 
@@ -246,7 +272,7 @@ Tools, assistants, contributors, or developers may propose changes but must not 
 
 Control ID: `SPGF-V6.3-CORRECTION`
 
-This draft addresses the following critical v6.2 errata items:
+This delta draft addresses the following critical v6.2 errata items:
 
 | Errata Item | Status In This Draft | Resolution |
 | --- | --- | --- |
@@ -258,3 +284,21 @@ This draft addresses the following critical v6.2 errata items:
 | 8 | Addressed | Added explicit constitution amendment authority. |
 
 Important and verification items remain open unless separately resolved.
+
+## 14. Merge Checklist For Full v6.3 Candidate
+
+Control ID: `SPGF-V6.3-MERGE-CHECKLIST`
+
+Before any `v6.3` constitution can be treated as a release candidate, the following retained v6.2 content must be merged or consciously replaced:
+
+- Full QG-1 through QG-4 table and pass criteria.
+- Full Open Question template.
+- Full Risk template.
+- Full Technical Debt template.
+- Detailed Soft Delete and Audit Trail policy, including required metadata fields such as `deleted_at`, `deleted_by`, and restoration/audit expectations where applicable.
+- Engineering Standards Trigger stage.
+- Quick usage page.
+- Cross-domain examples.
+- Periodic review process.
+
+Each retained, replaced, or intentionally removed section must be recorded in the final v6.3 Document Control notes.
