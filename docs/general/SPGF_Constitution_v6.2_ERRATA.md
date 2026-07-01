@@ -1,8 +1,18 @@
 # SPGF Constitution v6.2 Errata
 
-Status: Open
+Status: Working Errata
 
 Date: 2026-07-01
+
+## Document Status
+
+This file is an official repository-tracked errata and correction register for `SPGF_Constitution_v6.2.pdf`.
+
+It is not part of the constitution itself and does not carry constitutional authority as an appendix. It is a governed work item used to track defects before producing a corrected constitution release, recommended as `v6.3`.
+
+Once the corrective release is approved, resolved items should be integrated into the constitution source, referenced in Document Control, and this errata should be closed, archived, or superseded.
+
+Traceability in this errata uses stable errata item IDs such as `1`, `7A`, and `8`. New constitution section numbers should not be assigned here until the corrective `v6.3` source is drafted and approved.
 
 ## Summary
 
@@ -26,19 +36,33 @@ Reason: The issue affects the governing source of truth for future projects.
 | Important | Must be fixed before daily governance use, but does not alone invalidate the whole document. |
 | Technical / Verification | A rendering, extraction, accessibility, or validation concern; requires verification but may not be a content defect. |
 
+## Dependency Impact Scale
+
+| Dependency Impact | Meaning |
+| --- | --- |
+| Breaks Other Section | The defect directly prevents another section, control, or gate from functioning as intended. |
+| Weakens Governance | The defect reduces enforceability, ownership, traceability, or decision discipline. |
+| Independent Coverage Gap | The defect is missing important coverage, but does not directly break another section. |
+| Verification Only | The item requires visual, extraction, accessibility, or rendering verification. |
+
 ## Priority Summary
 
-| Item | Severity | Summary |
-| --- | --- | --- |
-| 1 | Critical | Missing Document Control and Versioning. |
-| 2 | Important | Missing or changed section references. |
-| 3 | Critical | Lean / Standard classification inconsistency. |
-| 4 | Important | Mandatory baseline is not strong enough. |
-| 5 | Important | Quality Gate flexibility lacks decision ownership. |
-| 6 | Important | Open Question / Risk / Technical Debt transition rule is missing. |
-| 7 | Critical | Material v6.1 governance sections are missing. |
-| 8 | Critical | Constitution change approval authority is missing. |
-| 9 | Technical / Verification | PDF extraction and table accessibility issue. |
+| Item | Severity | Dependency Impact | Summary |
+| --- | --- | --- | --- |
+| 1 | Critical | Weakens Governance | Missing Document Control and Versioning. |
+| 2 | Important | Breaks Other Section | Missing or changed section references. |
+| 3 | Critical | Breaks Other Section | Lean / Standard classification inconsistency. |
+| 4 | Important | Weakens Governance | Mandatory baseline is not strong enough. |
+| 5 | Important | Weakens Governance | Quality Gate flexibility lacks decision ownership. |
+| 6 | Important | Weakens Governance | Open Question / Risk / Technical Debt transition rule is missing. |
+| 7A | Critical | Breaks Other Section | Missing high-level architectural principles needed by QG-3 and ADR review. |
+| 7B | Critical | Weakens Governance | Missing Roles and Responsibilities Matrix. |
+| 7C | Important | Independent Coverage Gap | Missing engineering metrics. |
+| 7D | Important | Independent Coverage Gap | Missing Backup and DR policy. |
+| 7E | Important | Independent Coverage Gap | Missing support model. |
+| 7F | Critical | Weakens Governance | Missing framework glossary and founding rationale. |
+| 8 | Critical | Weakens Governance | Constitution change approval authority is missing. |
+| 9 | Technical / Verification | Verification Only | PDF extraction and table accessibility issue. |
 
 ## Confirmed Problems
 
@@ -167,33 +191,131 @@ Add transition rules:
 
 Severity: Critical
 
-The following governance areas were present in v6.1 or discussed as part of the SPGF framework, but are absent or materially underrepresented in the current v6.2 PDF:
+The following governance areas were present in v6.1 or discussed as part of the SPGF framework, but are absent or materially underrepresented in the current v6.2 PDF.
+
+They should not be treated as one uniform defect. Some omissions break other controls directly, while others are important independent coverage gaps.
+
+#### 7A. Missing High-Level Architectural Principles
+
+Severity: Critical
+
+Dependency Impact: Breaks Other Section
+
+Missing or materially absent principles include:
+
+- Single Responsibility.
+- Loose Coupling.
+- High Cohesion.
+- Separation of Concerns.
+- API First.
+- Database as Source of Truth.
+- Observability by Design.
+
+Impact:
+
+- QG-3 checks architecture and ADR quality, but v6.2 lacks a clear architectural baseline for judging those ADRs.
+- Architecture decisions become harder to accept or reject consistently.
+
+Required correction:
+
+- Restore the architectural principles as a dedicated section with stable identifiers.
+- Link QG-3 and ADR review language to these principles.
+
+#### 7B. Missing Roles And Responsibilities Matrix
+
+Severity: Critical
+
+Dependency Impact: Weakens Governance
+
+The current v6.2 PDF does not preserve a sufficient roles and responsibilities matrix.
+
+Impact:
+
+- Ownership of decisions, approvals, reviews, and exceptions becomes ambiguous.
+- This compounds defects in QG ownership and constitution amendment authority.
+
+Required correction:
+
+- Restore a roles and responsibilities matrix covering at least Project Owner, Analyst, Developer, Reviewer, Operations/Support Owner, and Governance Owner where applicable.
+
+#### 7C. Missing Engineering Metrics
+
+Severity: Important
+
+Dependency Impact: Independent Coverage Gap
+
+Missing or materially underrepresented metrics include:
+
+- ADR Density.
+- Risk burn-down time.
+- Technical Debt Volume.
+- RTM coverage.
+
+Impact:
+
+- Governance remains descriptive but loses measurable health indicators.
+
+Required correction:
+
+- Restore the engineering metrics section or explicitly move it to Engineering Standards with a stable cross-reference.
+
+#### 7D. Missing Backup And DR Policy
+
+Severity: Important
+
+Dependency Impact: Independent Coverage Gap
+
+Missing or materially underrepresented controls include:
+
+- Backup strategy.
+- RPO.
+- RTO.
+- Restore testing expectations.
+
+Impact:
+
+- Projects with operational or business-critical data lack a baseline continuity rule.
+
+Required correction:
+
+- Restore a profile-aware Backup and DR section, with stronger expectations for Standard and Enterprise profiles.
+
+#### 7E. Missing Support Model
+
+Severity: Important
+
+Dependency Impact: Independent Coverage Gap
+
+The P1/P2/P3 support model is missing or materially underrepresented.
+
+Impact:
+
+- Incident priority and response expectations are left to ad hoc judgment.
+
+Required correction:
+
+- Restore a simple support model that can scale by profile.
+
+#### 7F. Missing Framework Glossary And Founding Rationale
+
+Severity: Critical
+
+Dependency Impact: Weakens Governance
+
+Missing or materially absent content includes:
 
 - Why SPGF Exists / founding rationale.
 - Framework glossary.
-- High-level architectural principles:
-  - Single Responsibility.
-  - Loose Coupling.
-  - High Cohesion.
-  - Separation of Concerns.
-  - API First.
-  - Database as Source of Truth.
-  - Observability by Design.
-- Roles and Responsibilities Matrix.
-- Engineering metrics:
-  - ADR Density.
-  - Risk burn-down time.
-  - Technical Debt Volume.
-  - RTM coverage.
-- Backup and disaster recovery policy:
-  - Backup strategy.
-  - RPO.
-  - RTO.
-- Support model:
-  - P1.
-  - P2.
-  - P3.
-- Constitution update impact policy, if not fully preserved.
+
+Impact:
+
+- Readers lose shared definitions for terms such as QG, ADR, RTM, Profile, Technical Debt, Soft Delete, and SSOT.
+- The constitution becomes easier to reinterpret inconsistently across projects.
+
+Required correction:
+
+- Restore the founding rationale and glossary near the beginning of the document.
+- Keep glossary definitions aligned with Engineering Standards.
 
 ### 8. Constitution Change Approval Authority Is Missing
 
